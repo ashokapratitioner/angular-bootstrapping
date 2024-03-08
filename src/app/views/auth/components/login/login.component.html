@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" [@fadeInOut]>
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username" />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" />
+  </div>
+  <div class="mt-3 mb-3">
+    <a
+      class="text-secondary mr-2 cursor-pointer"
+      [routerLink]="['/auth', 'forgot-password']"
+      >Forgot Password</a
+    >
+    <a
+      class="text-secondary cursor-pointer"
+      [routerLink]="['/auth', 'reset-password']"
+      >Reset Password</a
+    >
+  </div>
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>

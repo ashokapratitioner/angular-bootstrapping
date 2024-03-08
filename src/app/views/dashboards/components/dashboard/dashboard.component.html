@@ -1,0 +1,9 @@
+<div>
+  <p appYellowBackground>
+    dashboard works! <b>{{ inputFromChild }}</b>
+  </p>
+  <app-dashboard-teams
+    [title]="inputFromParent"
+    (messageEvent)="onMessageReceived($event)"
+  ></app-dashboard-teams>
+</div>
